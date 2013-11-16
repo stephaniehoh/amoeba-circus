@@ -1,0 +1,28 @@
+<%= form_for(@amoeba) do |f| %>
+  <% if @amoeba.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@amoeba.errors.count, "error") %> prohibited this amoeba from being saved:</h2>
+
+      <ul>
+      <% @amoeba.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :generation %>
+  </div>
+  <div class="field">
+    <%= f.label :talent %><br>
+    <%= f.collection_select(:talent, Talent.all, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

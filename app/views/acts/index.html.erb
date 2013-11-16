@@ -1,0 +1,26 @@
+<h1>Acts</h1>
+
+<table cellpadding="8">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acts.each do |act| %>
+      <tr>
+        <td><%= link_to act.name, act %></td>
+        <td><%= link_to 'Edit', edit_act_path(act) %></td>
+        <td><%= link_to 'Delete', act, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Act', new_act_path %>

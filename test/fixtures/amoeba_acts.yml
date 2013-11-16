@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  amoeba_id: 
+  act_id: 
+
+two:
+  amoeba_id: 
+  act_id: 
